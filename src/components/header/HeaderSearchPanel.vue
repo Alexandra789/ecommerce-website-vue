@@ -53,13 +53,6 @@ export default {
     margin-top: 16px;
     margin-right: 0;
   }
-  //@media (min-width: 450px) and (max-width: 533px) {
-  //  width: 50%;
-  //}
-  //@media (max-width: 450px) {
-  //  display: none;
-  //}
-
 
   &:hover {
     .search-panel__icon {
