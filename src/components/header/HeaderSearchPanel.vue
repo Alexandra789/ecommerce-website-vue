@@ -30,8 +30,8 @@ export default {
     blurSearchInput() {
       this.$refs.searchPanel.classList.remove('focused');
       this.placeholder = 'Search';
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -45,15 +45,20 @@ export default {
   @media (min-width: 669px) and (max-width: 992px) {
     width: 75%;
   }
-  @media (min-width: 534px) and (max-width: 668px) {
+  @media (min-width: 536px) and (max-width: 668px) {
     width: 65%;
   }
-  @media (min-width: 450px) and (max-width: 533px) {
-    width: 50%;
+  @media all and (max-width: 536px) {
+    width: 100%;
+    margin-top: 16px;
+    margin-right: 0;
   }
-  @media (max-width: 450px) {
-    display: none;
-  }
+  //@media (min-width: 450px) and (max-width: 533px) {
+  //  width: 50%;
+  //}
+  //@media (max-width: 450px) {
+  //  display: none;
+  //}
 
 
   &:hover {

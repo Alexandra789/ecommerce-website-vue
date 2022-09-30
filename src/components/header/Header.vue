@@ -6,10 +6,11 @@
     </a>
     <HeaderNavigation :menuItems="menuItems"/>
     <div class="user-information">
-      <HeaderSearchPanel/>
+      <HeaderSearchPanel v-if="widthWindow>536"/>
       <HeaderBasketProducts/>
       <HeaderUserProfile/>
     </div>
+    <HeaderSearchPanel v-if="widthWindow<=536"/>
   </div>
 </template>
 
@@ -30,7 +31,17 @@ export default {
         {id: 3, title: 'Shoes'},
         {id: 4, title: 'Accessories'},
         {id: 5, title: 'More'},
-      ]
+      ],
+      widthWindow: window.innerWidth,
+    }
+  },
+  mounted() {
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = window.innerWidth;
+        this.widthWindow = window.screenWidth;
+        this.widthWindow === 535 ? this.myFlexWrap = 'wrap' : this.myFlexWrap = 'none';
+      })()
     }
   }
 }
@@ -46,6 +57,9 @@ export default {
   padding: 12px 16px;
   background: $blue_color_background_header;
   box-shadow: 0 1px 2px #9dc2ff, 0 2px 4px #c4daff;
+  @media all and (max-width: 536px) {
+    flex-wrap: wrap;
+  }
 
   .logo {
     display: flex;
@@ -87,7 +101,11 @@ export default {
     justify-content: space-between;
     max-width: 310px;
     width: 100%;
-    @media all and (max-width: 992px) {
+    @media all and (max-width: 536px) {
+      max-width: 100px;
+      justify-content: flex-end;
+    }
+    @media (min-width: 537px) and (max-width: 992px) {
       max-width: 450px;
       justify-content: flex-end;
     }
