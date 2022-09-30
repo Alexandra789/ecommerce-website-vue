@@ -1,11 +1,13 @@
 <template>
-
+  <Header/>
 </template>
 
 <script>
 
-export default {
+import Header from "@/components/header/Header";
 
+export default {
+  components: {Header}
 }
 </script>
 
@@ -24,5 +26,17 @@ h1, h2, h3, h4, h5, h6, ul {
 
 input, textarea, button {
   outline: none;
+  border: none;
+}
+
+a, .logo__title, button {
+  text-decoration: none;
+  transition: .21s ease-in-out;
+}
+
+svg {
+  path {
+    transition: .21s ease-in-out;
+  }
 }
 </style>

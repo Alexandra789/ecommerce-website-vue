@@ -4,7 +4,7 @@ module.exports = defineConfig({
   css: {
   loaderOptions: {
     sass: {
-      data: `@import "@/styles/style.scss";`
+      additionalData: `@import "@/styles/style.scss";`
     }
   }
 }
