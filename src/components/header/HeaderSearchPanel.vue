@@ -8,7 +8,7 @@
 </svg>
 
     <input v-model="inputValue" @blur="blurSearchInput" @focus="focusSearchInput" type="text"
-           class="search-panel__input"
+           class="search-panel__input" id="headerSearchInput"
            :placeholder="placeholder">
   </div>
 </template>
