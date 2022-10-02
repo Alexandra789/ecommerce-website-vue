@@ -1,8 +1,8 @@
 <template>
   <nav class="navigation">
     <ul class="navigation__menu">
-      <li v-for="item in menuItems" key={{item.id}}} class="navigation__menu-item">
-        <a href="" class="navigation__menu-link"> {{ item.title }}</a></li>
+      <li v-for="item in menuItems" :key="item.id" class="navigation__menu-item">
+        <a href="#" class="navigation__menu-link"> {{ item.title }}</a></li>
     </ul>
   </nav>
 </template>
@@ -22,14 +22,10 @@ export default {
 <style scoped lang="scss">
 .navigation {
   &__menu {
-    list-style: none;
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     margin: 0 24px;
-    @media all and (max-width: 992px) {
-      display: none;
-    }
 
     &-link {
       font-family: Quicksand, sans-serif;

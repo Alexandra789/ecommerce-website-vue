@@ -1,10 +1,11 @@
 <template>
+  <HeaderNavigationAdaptive v-if="widthWindow<=992" :menuItems="menuItems"/>
   <div class="header">
     <a href="#" class="logo">
       <img src="@/assets/images/logo.png" alt="logo img" class="logo__img">
-      <h1 class="logo__title">ShopPage</h1>
+      <h1 class="logo__title">{{ titlePage }}</h1>
     </a>
-    <HeaderNavigation :menuItems="menuItems"/>
+    <HeaderNavigation v-if="widthWindow>992" :menuItems="menuItems"/>
     <div class="user-information">
       <HeaderSearchPanel v-if="widthWindow>536"/>
       <HeaderBasketProducts/>
@@ -19,12 +20,14 @@ import HeaderNavigation from "@/components/header/HeaderNavigation";
 import HeaderSearchPanel from "@/components/header/HeaderSearchPanel";
 import HeaderBasketProducts from "@/components/header/HeaderBasketProducts";
 import HeaderUserProfile from "@/components/header/HeaderUserProfile";
+import HeaderNavigationAdaptive from "@/components/header/HeaderNavigationAdaptive";
 
 export default {
   name: "Header",
-  components: {HeaderUserProfile, HeaderSearchPanel, HeaderNavigation, HeaderBasketProducts},
+  components: {HeaderNavigationAdaptive, HeaderUserProfile, HeaderSearchPanel, HeaderNavigation, HeaderBasketProducts},
   data() {
     return {
+      titlePage: 'ShopPage',
       menuItems: [
         {id: 1, title: 'New in'},
         {id: 2, title: 'Clothing'},
@@ -110,5 +113,9 @@ export default {
       justify-content: flex-end;
     }
   }
+}
+
+.navigation.open + .header {
+  filter: blur(5px) opacity(0.9);
 }
 </style>
