@@ -19,11 +19,6 @@ export default {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, ul {
-  padding: 0;
-  margin: 0;
-}
-
 input, textarea, button {
   outline: none;
   border: none;
@@ -34,9 +29,22 @@ a, .logo__title, button {
   transition: .21s ease-in-out;
 }
 
+ul {
+  list-style: none;
+}
+
 svg {
   path {
     transition: .21s ease-in-out;
+  }
+}
+
+button {
+  background-color: $blue_color_button;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $blue_color_button_hover;
   }
 }
 </style>
